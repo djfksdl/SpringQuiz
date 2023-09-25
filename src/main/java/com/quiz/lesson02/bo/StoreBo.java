@@ -9,13 +9,26 @@ import com.quiz.lesson02.domain.Store;
 import com.quiz.lesson02.mapper.StoreMapper;
 
 @Service
-public class StoreBo {
+public class StoreBO {
+	
 	@Autowired
-	private StoreMapper storeMapper;
-	//input : X(파라미터 안받음)
-	//output : List<Store>
-	public List<Store> getStoreList(){ //카타리나 노, 내가만든걸로 임포트
+	private StoreMapper storeMapper;  // DI
+
+	// input: X
+	// output: List<Store>
+	public List<Store> getStoreList() {
 		return storeMapper.selectStoreList();
-		
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+

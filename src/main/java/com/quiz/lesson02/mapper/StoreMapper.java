@@ -10,5 +10,5 @@ import com.quiz.lesson02.domain.Store;
 public interface StoreMapper {
 	//input : X
 	//output : List<Store>
-	public List<Store> selectSoreList();
+	public List<Store> selectStoreList();
 }
