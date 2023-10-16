@@ -38,20 +38,22 @@ public class RealEstateBO {
 	public int addRealEstate(RealEstate realEstate) {
 		return realEstateMapper.insertRealEstate(realEstate);
 	}
-	// addRealEstateAsField(realtorId,"썅떼빌리버 오피스텔 814호", 45,"월세",100000,120);
-	public int addRealEstateAsField(int realtorId, String address, int area, String type, int price,Integer rentPrice) {
-		return realEstateMapper.
+	
+	public int addRealEstateAsField(
+			int realtorId222, String address, 
+			int area, String type, 
+			int price, Integer rentPrice) {
+		
+		return realEstateMapper.insertRealEstateAsField(realtorId222, address, area, type, price, rentPrice);
+	}
+	
+	// input: id, price, type
+	// output: int 
+	public int updateRealEstateById(int id, int price, String type) {
+		return realEstateMapper.updateRealEstateById(id, price, type);
+	}
+	
+	public int deleteRealEstateById(int id) {
+		return realEstateMapper.deleteRealEstateById(id);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
