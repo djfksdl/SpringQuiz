@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<maaper namespace="com.quiz.lesson06.mapper.BookmarkMapper">
+	<select id="selectBookmarkList" resultType="com.quiz.lesson06">
+		SELECT
+		`id`
+		,`name`
+		,`url`
+		,`createdAt`
+		,`updatedAt`
+		,``
+	</select>
+</maaper>
