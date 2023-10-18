@@ -29,8 +29,8 @@ public class BookmarkBO {
 	public Bookmark getBookmarkByUrl(String url) {
 		return bookmarkMapper.selectBookmarkByUrl(url);
 	}
+	
 	public void deleteBookmarkById(int id) {
 		bookmarkMapper.deleteBookmarkById(id);
-		
 	}
 }

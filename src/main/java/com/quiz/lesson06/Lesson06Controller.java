@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -81,17 +82,19 @@ public class Lesson06Controller {
 		}
 		return result;
 	}
-	// bookmark 삭제 기능
-	@GetMapping("/quiz02/delete-bookmark")
-	public Map<String,Object> deleteBookmark(
-			@RequestParam("id") int id){
+	
+	// bookmark 삭제 기능 -AJAX 호출
+	@ResponseBody
+	@DeleteMapping("/quiz02/delete-bookmark")
+	public Map<String, Object> deleteBookmark(
+			@RequestParam("id") int id) {
 		
-		//db delete
+		// db delete
 		bookmarkBO.deleteBookmarkById(id);
 		
 		Map<String, Object> result = new HashMap<>();
 		result.put("code", 200);
 		result.put("result", "성공");
-		return result; //json
+		return result;  // json
 	}
 }
