@@ -15,4 +15,6 @@ public interface BookmarkMapper {
 	public void insertBookmark(
 			@Param("name") String name, 
 			@Param("url") String url);
+	
+	public Bookmark selectBookmarkByUrl(String url);
 }

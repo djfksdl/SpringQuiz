@@ -61,4 +61,37 @@ public class Lesson06Controller {
 	}
 	
 	//-----quiz01 끝----
+	
+	//-----quiz02-----
+	// URL 중복확인 - AJAX 요청
+	@ResponseBody
+	@PostMapping("/quiz02/is-duplicated-url")
+	public Map<String, Object> isDuplicatedUrl(
+			@RequestParam("url") String url) {
+		
+		// DB 조회
+		Bookmark bookmark = bookmarkBO.getBookmarkByUrl(url);
+		
+		// 응답값
+		Map<String, Object> result = new HashMap<>();
+		result.put("code", 200);
+		result.put("is_duplication", false);
+		if (bookmark != null) {
+			result.put("is_duplication", true);
+		}
+		return result;
+	}
+	// bookmark 삭제 기능
+	@GetMapping("/quiz02/delete-bookmark")
+	public Map<String,Object> deleteBookmark(
+			@RequestParam("id") int id){
+		
+		//db delete
+		bookmarkBO.deleteBookmarkById(id);
+		
+		Map<String, Object> result = new HashMap<>();
+		result.put("code", 200);
+		result.put("result", "성공");
+		return result; //json
+	}
 }

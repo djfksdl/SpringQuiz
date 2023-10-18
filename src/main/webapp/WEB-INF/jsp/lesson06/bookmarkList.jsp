@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,13 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr></tr>
+			<c:forEach items="${bookmarkList}" var="bookmark">
+				<tr>
+					<td>${bookmark.id}</td>
+					<td>${bookmark.name}</td>
+					<td><a href="${bookmark.url}" target="_blank">${bookmark.url}</a></td>
+				</tr>
+			</c:forEach>
 			</tbody>
 		</table>
 	</div>

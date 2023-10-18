@@ -42,14 +42,3 @@ public class Lesson03Quiz01RestController {
 		return realEstateBO.getRealEstateListByAreaPrice(area, price);   // response body => JSON
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
