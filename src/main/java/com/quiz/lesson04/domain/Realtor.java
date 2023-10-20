@@ -2,6 +2,8 @@ package com.quiz.lesson04.domain;
 
 import java.util.Date;
 
+import lombok.Data;
+@Data
 public class Realtor {
 	private int id;
 	private String office;

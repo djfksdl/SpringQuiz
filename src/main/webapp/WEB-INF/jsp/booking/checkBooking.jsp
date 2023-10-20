@@ -105,10 +105,13 @@
 					//response
 					,success:functioin(data){
 						if(data.code == 200){
-							alert(data)
-							location.href = "/booking/"
-						} else {
-							alert("예약 내역이 없습니다."); //logic error
+							alert("이름:" + data.result.name 
+									+ "\n날짜:" + data.result.date
+									+ "\n일수:" + data.result.day
+									+ "\n인원:" + data.result.headcount
+									+ "\n상태:" + data.result.state);
+						} else if(data.code == 400) {
+							alert(data.error_message); 
 						}
 					}
 					,error:function(request, status, error){
