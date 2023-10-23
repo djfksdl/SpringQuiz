@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -16,12 +17,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@ToString 
+@ToString
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Builder
+@Builder(toBuilder = true)
 @Entity
+@Table(name = "company")
 public class CompanyEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,13 +38,10 @@ public class CompanyEntity {
 	private int headcount;
 	
 	@UpdateTimestamp
-	@Column(name="createdAt", updatable = false)
+	@Column(name = "createdAt", updatable = false)
 	private ZonedDateTime createdAt;
 	
 	@UpdateTimestamp
-	@Column(name="createdAt", updatable = false)
+	@Column(name = "updatedAt")
 	private ZonedDateTime updatedAt;
-	
-	
-
 }

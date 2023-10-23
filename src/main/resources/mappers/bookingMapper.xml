@@ -50,7 +50,8 @@
 			,NOW()
 		)
 	</insert>
-	<select id="getBookingByNamePhoneNumber" resultType="com.quiz.booking.domain.Booking>
+	
+	<select id="selectBookingByNamePhoneNumber" parameterType="map" resultType="com.quiz.booking.domain.Booking">
 		SELECT
 			`id`
 			,`name`
